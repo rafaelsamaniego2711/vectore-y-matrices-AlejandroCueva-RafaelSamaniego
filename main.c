@@ -25,11 +25,20 @@ int main () {
             for (int i = 0; i < 5; i++) {
                 float temp;
                 do {
-                    printf ("Ingrese la nota del estudiante: ", i + 1);
+                    printf ("Ingrese la nota del estudiante %d: ", i + 1);
                     scanf ("%f", &temp);
                     if (temp < 0 || temp > 10)
                         printf ("Error la nota debe estar en el rango de 0-10.\n");
                 }   while (temp < 0 || temp > 10);
+
+                notas[i][j] = temp;
+                sumacol += temp;
+
+                if(temp > maxasig[j]) maxasig[j] = temp;
+                if(temp < minasig[j]) minasig[j] = temp;
+                if(temp >= 6) aprobados[j]++;
+                else reprobados[j]++;
+
 
                 
 
