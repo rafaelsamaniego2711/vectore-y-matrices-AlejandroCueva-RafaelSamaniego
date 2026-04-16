@@ -17,10 +17,11 @@ int main () {
             case 0: printf ("matematica\n"); break;
             case 1: printf ("lenguaje\n"); break;
             case 2: printf ("computacion\n"); break;
+        }
 
             float sumacol = 0;
-            maxasig[j] = -1;
-            minasig[j] = 11;
+            maxasig[j] = -20;
+            minasig[j] = 20;
 
             for (int i = 0; i < 5; i++) {
                 float temp;
@@ -38,6 +39,51 @@ int main () {
                 if(temp < minasig[j]) minasig[j] = temp;
                 if(temp >= 6) aprobados[j]++;
                 else reprobados[j]++;
+            }
+            promasignaturas[j] = sumacol / 5;
+        }
+
+        for (int i = 0; i < 5; i++) {
+            float sumafila = 0;
+            maxest[i] = -20;
+            minest[i] = 20;
+            for (int j = 0; j < 3; j++) {
+                sumafila += notas [i][j];
+                if(notas[i][j] > maxest[i]) maxest[i] = notas[i][j];
+                if(notas[i][j] < minest[i]) minest[i] = notas[i][j];
+            }
+            promestudiantes[i] = sumafila / 3;
+        }
+        
+        printf ("\n--------Resultados obtenidos--------\n");
+        for (int j = 0; j < 3; j++){
+            printf ("\nmateria: ");
+            switch (j) {
+                case 0: printf ("matematica\n"); break;
+                case 1: printf ("lenguaje\n"); break;
+                case 2: printf ("computacion\n"); break;
+            }
+            printf ("promedio grupal: %.2f\n", promasignaturas[j]);
+            printf ("nota mas alta: %.2f\n", maxasig[j]);
+            printf ("nota mas baja: %.2f\n", minasig[j]);
+            printf ("estudiantes aprobados: %d\n", aprobados[j]);
+            printf ("estudiantes reprobados: %d\n", reprobados[j]);
+        }
+
+        printf ("\n--------informacion del estudiante--------\n");
+        for (int i = 0; i < 5; i++) {
+            printf("Estudiante %d\tPromedio: %.2f\tMax: %.2f\tMin: %.2f\n", 
+            i + 1, promestudiantes[i], maxest[i], minest[i]);
+        }
+
+        return 0;
+    }
+
+    
+
+
+            
+        
 
 
                 
