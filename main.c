@@ -22,5 +22,16 @@ int main () {
             maxasig[j] = -1;
             minasig[j] = 11;
 
+            for (int i = 0; i < 5; i++) {
+                float temp;
+                do {
+                    printf ("Ingrese la nota del estudiante: ", i + 1);
+                    scanf ("%f", &temp);
+                    if (temp < 0 || temp > 10)
+                        printf ("Error la nota debe estar en el rango de 0-10.\n");
+                }   while (temp < 0 || temp > 10);
+
+                
+
     
 
